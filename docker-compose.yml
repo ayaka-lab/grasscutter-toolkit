@@ -7,8 +7,8 @@ services:
     volumes:
       - ./mount/grasscutter:/app/grasscutter
     privileged: true
-    # ports:
-    #   - "443:443"
+    ports:
+      - "443:443"
 
   mongodb:
     image: mongo:4.4.23
