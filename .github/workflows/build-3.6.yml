@@ -1,4 +1,4 @@
-name: auto-build
+name: 3.6
 
 on:
   # push:
