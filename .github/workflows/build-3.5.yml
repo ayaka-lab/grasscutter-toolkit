@@ -1,15 +1,23 @@
 name: auto-build
 
 on:
-  push:
-    branches:
-      - main
+  # push:
+  #   branches:
+  #     - main
+  workflow_dispatch:
+    inputs:
+      unconditional-invoking:
+        description: '构建3.5镜像'
+        type: boolean
+        required: true
+        default: true
+
 
 env:
   NODE_VERSION: 16.19.1
   DOCKER_REGISTRY: docker.io
   IMAGE_NAME: ayakalab/grasscutter
-  IMAGE_TAG: latest
+  IMAGE_TAG: 3.5
 
 jobs:
   build-and-push:
@@ -40,3 +48,6 @@ jobs:
           push: true
           tags: ${{ env.DOCKER_REGISTRY }}/${{ env.IMAGE_NAME }}:${{ env.IMAGE_TAG }}
           platforms: linux/amd64,linux/arm64/v8
+          build-args:
+          - gc_version=516e5975e1deead0ddbc87f5884ec58392870a53
+          - resources_version=3.5

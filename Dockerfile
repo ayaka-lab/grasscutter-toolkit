@@ -5,11 +5,11 @@ FROM gradle:jdk17-jammy AS build
 # 这个版本是3.5的，具体的可以参考
 # https://github.com/Grasscutters/Grasscutter/releases
 # 不同的Release有对应的版本
-ENV gc_version=516e5975e1deead0ddbc87f5884ec58392870a53
+ARG gc_version=516e5975e1deead0ddbc87f5884ec58392870a53
 
 # 资源文件对应的分支的名字，参考
 # https://gitlab.com/Kamisato-Ayaka
-ENV resources_version=3.5
+ARG resources_version=3.5
 
 # 指定工作目录
 WORKDIR /app
