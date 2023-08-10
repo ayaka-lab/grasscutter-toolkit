@@ -50,4 +50,6 @@ jobs:
           push: true
           tags: ${{ env.DOCKER_REGISTRY }}/${{ env.IMAGE_NAME }}:${{ env.IMAGE_TAG }}
           platforms: linux/amd64,linux/arm64/v8
-          build-args: gc_version=${{ env.GC_VERSION }}, resources_version=${{ env.Resources_Version }}
+          build-args: |  
+            gc_version=${{ env.GC_VERSION }}
+            resources_version=${{ env.Resources_Version }}
