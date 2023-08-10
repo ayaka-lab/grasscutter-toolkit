@@ -8,11 +8,11 @@
     },
     "databaseInfo": {
       "server": {
-        "connectionUri": "mongodb://localhost:27017",
+        "connectionUri": "mongodb://mongodb:27017",
         "collection": "grasscutter"
       },
       "game": {
-        "connectionUri": "mongodb://localhost:27017",
+        "connectionUri": "mongodb://mongodb:27017",
         "collection": "grasscutter"
       }
     },
@@ -63,7 +63,7 @@
         "accessPort": 0,
         "loadEntitiesForPlayerRange": 100,
         "enableScriptInBigWorld": false,
-        "enableConsole": true,
+        "enableConsole": false,
         "kcpInterval": 20,
         "logPackets": "NONE",
         "isShowPacketPayload": false,

@@ -1,10 +1,12 @@
+# docker-compose up
 version: '3'
 services:
   grasscutter:
     image: ayakalab/grasscutter:latest
     restart: always
     volumes:
-      - ./mount/grasscutter:/app
+      - ./mount/grasscutter:/app/grasscutter
+    privileged: true
     # ports:
     #   - "443:443"
 

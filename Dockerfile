@@ -26,10 +26,17 @@ RUN git clone -b $resources_version https://gitlab.com/Kamisato-Ayaka/GC-Resourc
 
 # 使用 Java 17 的镜像作为基础镜像 
 FROM docker.io/library/openjdk:17-jdk-slim
+
+# 指定工作目录
+WORKDIR /app/grasscutters
+
 # 将 JAR 文件复制到容器中 
-COPY --from=build /app/Grasscutter/*.jar /app/grasscutters.jar
-COPY --from=build /app/Resources/Resources /app/resources
-COPY ./config/grasscutter/config.json /app
+COPY --from=build /app/Grasscutter/*.jar grasscutters.jar
+COPY --from=build /app/Resources/Resources resources
+COPY ./config/grasscutter/config.json .
+
+# RUN chmod 777 /app/grasscutters.jar
+
 # 在容器中运行应用程序 
-ENTRYPOINT ["java", "-jar", "/app/grasscutters.jar"]
+ENTRYPOINT ["java", "-jar", "grasscutters.jar"]
 
