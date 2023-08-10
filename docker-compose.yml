@@ -5,16 +5,13 @@ services:
     image: ayakalab/grasscutter:latest
     restart: always
     volumes:
-      - ./mount/grasscutter:/app
-    privileged: true
+      - ./config/grasscutter/config.json:/app/config.json
+      # - ./config/grasscutter/keystore.p12:/app/keystore.p12
     ports:
       - "443:443"
-
+  
   mongodb:
     image: mongo:4.4.23
     restart: always
     volumes:
       - ./mount/mongodb:/data/db
-    # environment:
-    #   MYSQL_ROOT_PASSWORD: example_mysql_password
-    #   MYSQL_SSL_MODE: disabled
