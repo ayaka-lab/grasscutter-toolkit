@@ -7,7 +7,7 @@ on:
   workflow_dispatch:
     inputs:
       unconditional-invoking:
-        description: '构建3.5镜像'
+        description: '构建3.7镜像'
         type: boolean
         required: true
         default: true
