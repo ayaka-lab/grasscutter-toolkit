@@ -16,9 +16,9 @@ on:
 env:
   DOCKER_REGISTRY: docker.io
   IMAGE_NAME: ayakalab/grasscutter
-  IMAGE_TAG: 3.5
-  GC_VERSION: 516e5975e1deead0ddbc87f5884ec58392870a53
-  Resources_Version: 3.5
+  IMAGE_TAG: 3.6
+  GC_VERSION: c4f1208f45c3c649114adb5b8bf185cfbafe785b
+  Resources_Version: 3.6
 
 
 jobs:
@@ -50,6 +50,4 @@ jobs:
           push: true
           tags: ${{ env.DOCKER_REGISTRY }}/${{ env.IMAGE_NAME }}:${{ env.IMAGE_TAG }}
           platforms: linux/amd64,linux/arm64/v8
-          build-args: |  
-            gc_version=${{ env.GC_VERSION }}
-            resources_version=${{ env.Resources_Version }}
+          build-args: gc_version=${{ env.GC_VERSION }}, resources_version=${{ env.Resources_Version }}
