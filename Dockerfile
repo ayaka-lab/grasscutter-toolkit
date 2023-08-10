@@ -23,12 +23,11 @@ RUN cd Grasscutter && chmod +x gradlew && ./gradlew jar
 # 下载资源文件
 RUN git clone -b $resources_version https://gitlab.com/Kamisato-Ayaka/GC-Resources.git ./Resources
 
-
 # 使用 Java 17 的镜像作为基础镜像 
 FROM docker.io/library/openjdk:17-jdk-slim
 
 # 指定工作目录
-WORKDIR /app/grasscutters
+WORKDIR /app
 
 # 将 JAR 文件复制到容器中 
 COPY --from=build /app/Grasscutter/*.jar grasscutters.jar

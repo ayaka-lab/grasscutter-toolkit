@@ -5,7 +5,7 @@ services:
     image: ayakalab/grasscutter:latest
     restart: always
     volumes:
-      - ./mount/grasscutter:/app/grasscutter
+      - ./mount/grasscutter:/app
     privileged: true
     ports:
       - "443:443"
