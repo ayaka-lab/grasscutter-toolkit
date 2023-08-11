@@ -35,4 +35,3 @@ COPY --from=build /app/Resources/Resources resources
 
 # 在容器中运行应用程序 
 ENTRYPOINT ["java", "-jar", "grasscutters.jar"]
-

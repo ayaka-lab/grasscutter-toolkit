@@ -63,7 +63,7 @@
         "accessPort": 0,
         "loadEntitiesForPlayerRange": 100,
         "enableScriptInBigWorld": false,
-        "enableConsole": false,
+        "enableConsole": true,
         "kcpInterval": 20,
         "logPackets": "NONE",
         "isShowPacketPayload": false,

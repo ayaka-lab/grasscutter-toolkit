@@ -9,7 +9,10 @@ services:
       # - ./config/grasscutter/keystore.p12:/app/keystore.p12
     ports:
       - "443:443"
-  
+    depends_on:
+      - mongodb
+    stdin_open: true
+    tty: true
   mongodb:
     image: mongo:4.4.23
     restart: always
