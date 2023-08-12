@@ -17,7 +17,14 @@ sudo apt-get -y install git
 git clone https://github.com/ayaka-lab/grasscutter-toolkit && cd grasscutter-toolkit
 ```
 
-4. 仔细看清楚你需要的游戏版本
-```bash
+4. 仔细看清楚你需要的游戏版本，修改docker-compose文件里面的`:latest`为对应的版本，具体可以去看https://hub.docker.com/repository/docker/ayakalab/grasscutter/general的里面的tag。
+目前支持的tag有：
+- 3.5
+- 3.6
 
+然后，把你的网站的p12证书，放在config/grasscutter里面，最后检查config.json文件即可。
+
+5. 启动服务器
+```bash
+docker-compose up -d
 ```
